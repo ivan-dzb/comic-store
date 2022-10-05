@@ -2,6 +2,8 @@ import axios from "axios";
 import ComicCard from "components/ComicCard/ComicCard";
 import React, { useState, useEffect } from "react";
 
+import styles from "./RecentComics.module.css";
+
 import { Comic } from "types/comics";
 
 type Props = {};
@@ -26,13 +28,7 @@ const RecentComics = (props: Props) => {
 
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        marginTop: "10px",
-        gap: "2rem",
-      }}
+      className={styles.container}
     >
       {comics.length && comics.map((comic) => (
         <ComicCard key={comic.id} comic={comic} />

@@ -22,8 +22,8 @@ import {
 import SearchBar from "components/SearchBar/SearchBar";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const navItems = ["Todos los comics", "Personajes", "Contacto"];
+const settings = ["Perfil", "Pedidos", "Logout"];
 
 
 export default function Navbar(props: any) {
@@ -74,20 +74,20 @@ export default function Navbar(props: any) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { lg: "none" } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
             variant="h6"
             component="div"
-            sx={{ paddingRight: "3rem", display: { xs: "none", sm: "block" } }}
+            sx={{ paddingRight: "3rem", display: { xs: "none", lg: "block" } }}
           >
             Marvelous Comics
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" }, flexGrow: 1 }}>
+          <Box sx={{ display: { xs: "none", lg: "block" }, flexGrow: 1 }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", paddingRight: "2rem" }}>
+              <Button key={item} sx={{ color: "#fff", padding: "1rem", textAlign: "center" }}>
                 {item}
               </Button>
             ))}
@@ -135,7 +135,7 @@ export default function Navbar(props: any) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", lg: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

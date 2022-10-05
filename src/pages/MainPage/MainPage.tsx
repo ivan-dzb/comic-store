@@ -8,7 +8,7 @@ import { Comic } from 'types/comics';
 const MainPage = () => {
   return (
     <Box component="main" sx={{paddingTop: 8, alignContent: "center"}}>
-      <h2 style={{textAlign: "center", paddingBottom:"2rem"}}>Comics más recientes</h2>
+      <h2 style={{textAlign: "center", paddingBottom:"2rem", fontSize: "3rem"}}>Comics más recientes</h2>
         <RecentComics />
     </Box>
     )
