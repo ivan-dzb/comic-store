@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import {
@@ -20,11 +20,15 @@ import {
   Typography,
 } from "@mui/material";
 import SearchBar from "components/SearchBar/SearchBar";
+import { Link, NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Todos los comics", "Personajes", "Contacto"];
+const navItems = [
+  { "all-comics": "Todos los comics" },
+  { "by-character": "Por personaje" },
+  { "contact": "Contacto" },
+];
 const settings = ["Perfil", "Pedidos", "Logout"];
-
 
 export default function Navbar(props: any) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -52,11 +56,16 @@ export default function Navbar(props: any) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
+          <NavLink
+            to={Object.keys(item)[0]}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <ListItem key={Object.keys(item)[0]} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={Object.values(item)[0]} />
+              </ListItemButton>
+            </ListItem>
+          </NavLink>
         ))}
       </List>
     </Box>
@@ -83,13 +92,20 @@ export default function Navbar(props: any) {
             component="div"
             sx={{ paddingRight: "3rem", display: { xs: "none", lg: "block" } }}
           >
-            Marvelous Comics
+            <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
+              Marvelous Comics
+            </NavLink>
           </Typography>
           <Box sx={{ display: { xs: "none", lg: "block" }, flexGrow: 1 }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", padding: "1rem", textAlign: "center" }}>
-                {item}
-              </Button>
+              <NavLink
+                to={Object.keys(item)[0]}
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Button color="inherit" key={Object.keys(item)[0]}>
+                  {Object.values(item)[0]}
+                </Button>
+              </NavLink>
             ))}
           </Box>
           <SearchBar />
