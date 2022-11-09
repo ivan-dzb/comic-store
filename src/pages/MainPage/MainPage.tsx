@@ -18,7 +18,7 @@ const MainPage = () => {
     );
     const priceAndThumbnail = response.data.data.results.filter(
       (comic: Comic) => {
-        return comic.prices[0].price && comic.images[0];
+        return comic.prices[0].price && comic.images[0] && comic.description;
       }
     );
     setComics(priceAndThumbnail);

@@ -7,6 +7,8 @@ type Props = {
 };
 
 const ComicCard = (props: Props) => {
+
+  console.log(props.comic);
   return (
     <div className={styles.container}>
       {props.comic.description && (

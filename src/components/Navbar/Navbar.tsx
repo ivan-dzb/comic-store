@@ -59,6 +59,7 @@ export default function Navbar(props: any) {
           <NavLink
             to={Object.keys(item)[0]}
             style={{ textDecoration: "none", color: "white" }}
+            key={Object.keys(item)[0]}
           >
             <ListItem key={Object.keys(item)[0]} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
@@ -101,6 +102,7 @@ export default function Navbar(props: any) {
               <NavLink
                 to={Object.keys(item)[0]}
                 style={{ textDecoration: "none", color: "white" }}
+                key={Object.keys(item)[0]}
               >
                 <Button color="inherit" key={Object.keys(item)[0]}>
                   {Object.values(item)[0]}
