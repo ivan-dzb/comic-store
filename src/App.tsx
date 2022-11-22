@@ -6,6 +6,7 @@ import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router
 import Navbar from "components/Navbar/Navbar";
 import AllComics from "pages/AllComics/AllComics"; 
 import ByCharacter from "pages/ByCharacter/ByCharacter";
+import Searched from "pages/Searched/Searched";
 
  const router = createBrowserRouter([
    { path: "/", element: <MainPage /> },
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="all-comics" element={<AllComics />} />
         <Route path="by-character" element={<ByCharacter />} />
+        <Route path="search" element={<Searched />} />
       </Routes>
     </ThemeProvider>
   );

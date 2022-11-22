@@ -20,7 +20,8 @@ import {
   Typography,
 } from "@mui/material";
 import SearchBar from "components/SearchBar/SearchBar";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "assets/images/logo2.png";
 
 const drawerWidth = 240;
 const navItems = [
@@ -94,7 +95,7 @@ export default function Navbar(props: any) {
             sx={{ paddingRight: "3rem", display: { xs: "none", lg: "block" } }}
           >
             <NavLink to="/" style={{ textDecoration: "none", color: "white" }}>
-              Marvelous Comics
+              <img src={logo} alt="logo" style={{ height: "3rem" }} />
             </NavLink>
           </Typography>
           <Box sx={{ display: { xs: "none", lg: "block" }, flexGrow: 1 }}>
