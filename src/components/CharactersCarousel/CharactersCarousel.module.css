@@ -38,7 +38,8 @@
   font-size: 1.5rem;
   margin: 0 10px;
   position: absolute;
-  left: 50%;
+  left: 45%;
+  top: 4%;
   transform: translateX(-50%);
   background-color: white;
   white-space: nowrap;
@@ -46,7 +47,8 @@
   border-radius: 7px;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .character__name::before {
@@ -60,7 +62,6 @@
 }
 
 .card:hover .character__name {
-  top: -130%;
   visibility: visible;
   opacity: 1;
 }

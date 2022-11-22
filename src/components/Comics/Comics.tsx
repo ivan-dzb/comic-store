@@ -13,14 +13,14 @@ type Props = {
 const RecentComics = (props: Props) => {
 
   const {comics} = props
-
+  
   return (
     <div
       className={styles.container}
     >
-      {comics.length && comics.map((comic) => (
+      {comics.length ? comics.map((comic) => (
         <ComicCard key={comic.id} comic={comic} />
-      ))}
+      )): <div></div>}
     </div>
   );
 };
